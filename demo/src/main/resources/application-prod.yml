@@ -1,0 +1,25 @@
+elasticsearch:
+    host: ${ELASTICSEARCH_HOST}
+    ##username: ${ELASTICSEARCH_USERNAME}
+    ##password: ${ELASTICSEARCH_PASSWORD}
+
+spring:
+    data:
+        redis:
+            host: ${REDIS_HOST}
+            port: ${REDIS_PORT:6379}
+
+    datasource:
+        url: ${DB_URL}
+        username: ${DB_USERNAME}
+        password: ${DB_PASSWORD}
+        driver-class-name: com.mysql.cj.jdbc.Driver
+
+    jpa:
+        show-sql: false
+
+    rabbitmq:
+        host: ${RABBITMQ_HOST}
+        port: ${RABBITMQ_PORT:5672}
+        username: ${RABBITMQ_USERNAME}
+        password: ${RABBITMQ_PASSWORD}
