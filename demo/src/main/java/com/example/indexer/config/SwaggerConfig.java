@@ -16,6 +16,15 @@ import io.swagger.v3.oas.annotations.servers.Server;
         @Server(url = "/", description = "")
 })
 public class SwaggerConfig {
+
+    @Bean
+    public GroupedOpenApi indexApi() {
+        return GroupedOpenApi.builder()
+            .group("index")
+            .displayName("인덱싱")
+            .pathsToMatch("/index/**")
+            .build();
+    }
     
     @Bean
     public GroupedOpenApi searchApi() {

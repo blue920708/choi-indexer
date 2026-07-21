@@ -9,15 +9,5 @@ spring:
             ddl-auto: none
         properties:
             hibernate:
-                dialect: org.hibernate.dialect.MySQLDialect # mysql-connector-j와 서버 버전 조합에 따라 자동 감지가 깨져서 명시
                 format_sql: true   # SQL을 보기 좋게 줄바꿈해서 출력
                 use_sql_comments: true  # 어떤 메서드에서 나온 쿼리인지 주석으로 표시
-
-    rabbitmq:
-        listener:
-            simple:
-                retry:
-                    enabled: true
-                    max-attempts: 3        # 최대 3번까지만 재시도
-                    initial-interval: 2000 # 재시도 간격(ms), 이후 시도마다 배로 증가
-                default-requeue-rejected: false # 재시도 다 실패하면 큐에 무한 재적재하지 않고 DLQ로 보냄

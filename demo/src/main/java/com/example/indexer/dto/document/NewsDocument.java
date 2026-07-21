@@ -1,11 +1,9 @@
 package com.example.indexer.dto.document;
 
-import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 
-import com.example.indexer.dto.News;
 import com.example.indexer.entity.NewsEntity;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -18,7 +16,7 @@ import lombok.Setter;
 @JsonIgnoreProperties(ignoreUnknown = true) // Spring Data Elasticsearch가 저장 시 붙이는 _class 메타 필드를 무시
 public class NewsDocument {
     @Id
-    private String id;
+    private Long id;
     private String url;
     private String title;
     private String content;
