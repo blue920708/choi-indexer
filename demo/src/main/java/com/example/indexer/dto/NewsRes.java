@@ -9,12 +9,12 @@ import lombok.Setter;
 @Builder
 @Getter
 @Setter
-public class NewsRes {
-    private int total;
-    private List<News> res;
+public class NewsRes<T> {
+    private long total;
+    private List<T> res;
 
-    public static NewsRes of(int total, List<News> news) {
-        return NewsRes.builder()
+    public static <T> NewsRes<T> of(long total, List<T> news) {
+        return NewsRes.<T>builder()
             .total(total)
             .res(news)
             .build();
