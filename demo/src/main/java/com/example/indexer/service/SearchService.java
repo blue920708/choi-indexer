@@ -45,6 +45,7 @@ public class SearchService {
                 client.search(s -> {
                     s.index("news");
                     s.size(pageSize);
+                    s.trackTotalHits(t -> t.enabled(true)); // 1만 건 넘어가도 정확한 total 카운트
 
                     if (page != null && page > 1) {
                         s.from((page - 1) * pageSize);
