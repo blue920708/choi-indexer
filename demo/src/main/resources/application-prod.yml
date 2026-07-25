@@ -1,20 +1,20 @@
 elasticsearch:
-    host: ${ELASTICSEARCH_HOST}
-    ##username: ${ELASTICSEARCH_USERNAME}
-    ##password: ${ELASTICSEARCH_PASSWORD}
+    host: 16.184.59.23:9200
+    ##username: elastic
+    ##password: ydT7m5qAZUmBuIyZlKVO
 
 spring:
     datasource:
-        url: ${DB_URL}
-        username: ${DB_USERNAME}
-        password: ${DB_PASSWORD}
+        url: jdbc:mysql://16.184.59.23:3306/test?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+        username: user
+        password: 8426
         driver-class-name: com.mysql.cj.jdbc.Driver
 
     jpa:
-        show-sql: false
+        show-sql: true
 
     rabbitmq:
-        host: ${RABBITMQ_HOST}
-        port: ${RABBITMQ_PORT:5672}
-        username: ${RABBITMQ_USERNAME}
-        password: ${RABBITMQ_PASSWORD}
+        host: 16.184.59.23
+        port: 5672
+        username: guest
+        password: guest
