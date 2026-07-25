@@ -40,5 +40,5 @@ tasks.named('test') {
 }
 
 tasks.named('bootJar') {
-	archiveFileName = 'news-api.jar'
+	archiveFileName = 'indexer-api.jar'
 }
