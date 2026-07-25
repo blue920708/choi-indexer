@@ -9,6 +9,8 @@ import org.springframework.web.servlet.resource.NoResourceFoundException;
 import com.example.indexer.common.ApiCode;
 import com.example.indexer.common.ApiResult;
 
+import io.sentry.Sentry;
+
 @RestControllerAdvice
 public class ErrorHandler {
 
@@ -16,6 +18,7 @@ public class ErrorHandler {
     @ExceptionHandler(Exception.class)
     public ApiResult<?> handleException(Exception e) {
         e.printStackTrace();
+        Sentry.captureException(e);
         return new ApiResult<>(ApiCode.FAIL);
     }
 
